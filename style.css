@@ -1,0 +1,200 @@
+/**
+ * Style for Hoth Project
+ */
+
+body {
+	background-color: #333333;
+	font-size: 10px;
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	color: #343434;
+	letter-spacing: 2px;
+}
+
+a {
+	color: #444;
+}
+
+#esb-logo {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+    margin-top: 3%;
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    margin-left: -20px;
+    text-align: right;
+}
+
+#mountains {
+    background: transparent url("images/mountains.png") center bottom no-repeat;
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+}
+
+#atat {
+    background: transparent url("images/atat.png") center bottom no-repeat;
+    background-size: cover;
+    z-index: 4;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+}
+
+#background-clouds {
+    background: transparent url("images/background-clouds.jpg") repeat;
+    background-size: cover;
+    content: "";
+    z-index: 1;
+    left: 0;
+    right: -2000px;
+    top: 0px;
+    position: fixed;
+    width: 4000px;
+    height: 700px;
+    animation: horizontalScroll 200s linear infinite;
+	-webkit-animation:  horizontalScroll 200s linear infinite;
+	-moz-animation:  horizontalScroll 200s linear infinite;
+	-ms-animation:  horizontalScroll 200s linear infinite;
+	-o-animation:  horizontalScroll 200s linear infinite;
+	transform: translatez(0);
+	-webkit-transform:  translatez(0);
+	-moz-transform:  translatez(0);
+	-ms-transform:  translatez(0);
+	-o-transform: translatez(0);
+}
+
+#clouds {
+    background: transparent url("images/clouds.png") repeat;
+    content: "";
+    z-index: 3;
+    left: 0;
+    right: -2000px;
+    top: 0px;
+    position: fixed;
+    width: 4000px;
+    height: 100%;
+    opacity: 0.7;
+    animation: horizontalScroll 40s linear infinite;
+	-webkit-animation:  horizontalScroll 40s linear infinite;
+	-moz-animation:  horizontalScroll 40s linear infinite;
+	-ms-animation:  horizontalScroll 40s linear infinite;
+	-o-animation:  horizontalScroll 40s linear infinite;
+	transform: translatez(0);
+	-webkit-transform:  translatez(0);
+	-moz-transform:  translatez(0);
+	-ms-transform:  translatez(0);
+	-o-transform: translatez(0);
+}
+
+#background-fog {
+    background: transparent url("images/fog.png") repeat;
+    content: "";
+    z-index: 5;
+    left: 0;
+    right: -2000px;
+    top: 0px;
+    position: fixed;
+    width: 4000px;
+    height: 100%;
+    opacity: 0.4;
+	animation: horizontalScroll 100s linear infinite;
+	-webkit-animation:  horizontalScroll 100s linear infinite;
+	-moz-animation:  horizontalScroll 100s linear infinite;
+	-ms-animation:  horizontalScroll 100s linear infinite;
+	-o-animation:  horizontalScroll 100s linear infinite;
+	transform: translatez(0);
+	-webkit-transform:  translatez(0);
+	-moz-transform:  translatez(0);
+	-ms-transform:  translatez(0);
+	-o-transform: translatez(0);
+}
+
+#foreground-fog {
+    background: transparent url("images/fog2.png") repeat;
+    content: "";
+    z-index: 8;
+    left: 0;
+    right: -2000px;
+    top: 0px;
+    position: fixed;
+    width: 4000px;
+    height: 100%;
+	animation: horizontalScroll 50s linear infinite;
+	-webkit-animation: horizontalScroll 50s linear infinite;
+	-moz-animation:  horizontalScroll 50s linear infinite;
+	-ms-animation:  horizontalScroll 50s linear infinite;
+	-o-animation:  horizontalScroll 50s linear infinite;
+	transform: translatez(0);
+	-webkit-transform:  translatez(0);
+	-moz-transform:  translatez(0);
+	-ms-transform:  translatez(0);
+	-o-transform: translatez(0);
+}
+
+#snow-back {
+    background: transparent url("images/snow1.png") repeat;
+    content: "";
+    z-index: 6;
+    left: 0px;
+    top: -1500px;
+    position: fixed;
+    width: 100%;
+    height: 3000px;
+	animation: snowFall 200s linear infinite;
+	-webkit-animation:  snowFall 200s linear infinite;
+	-moz-animation:  snowFall 200s linear infinite;
+	-ms-animation:  snowFall 200s linear infinite;
+	-o-animation: snowFall 200s linear infinite;
+}
+
+#snow-front {
+    background: transparent url("images/snow1.png") repeat;
+    content: "";
+    z-index: 7;
+    left: 0px;
+    top: -1500px;
+    position: fixed;
+    width: 100%;
+    height: 3000px;
+    opacity: 0.6;
+	animation: snowFall 80s linear infinite;
+	-webkit-animation:  snowFall 80s linear infinite;
+	-moz-animation:  snowFall 80s linear infinite;
+	-ms-animation:  snowFall 80s linear infinite;
+	-o-animation: snowFall 80s linear infinite;
+}
+
+@keyframes horizontalScroll {
+    from {
+        transform: translate3d(0);
+    }
+    to {
+        transform: translate3d(-2000px, 0, 0);
+    }
+}
+
+@keyframes snowFall {
+    from {
+        transform: translate3d(0px);
+    }
+    to {
+        transform: translate3d(0, 1500px, 0);
+    }
+}

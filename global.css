@@ -1,0 +1,334 @@
+/*
+ * SASS Global Stylesheets for HTML/CSS Cinemagraphs
+ * Created by Topher Young
+ * topheryoungdesign.com
+ */
+/* Mixins */
+/* Variables */
+/* Base styling */
+/* line 6, sass/partials/_base.scss */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #333333;
+  font-size: 10px;
+  font-family: sans-serif;
+  font-weight: normal;
+  border: 0;
+  vertical-align: baseline;
+  color: #444444;
+  letter-spacing: 2px;
+}
+/* line 17, sass/partials/_base.scss */
+body a {
+  color: #8DC63F;
+}
+/* line 20, sass/partials/_base.scss */
+body a:hover {
+  color: #8DC63F;
+  text-decoration: underline;
+}
+
+/* line 30, sass/partials/_base.scss */
+#esb-logo {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 9;
+  margin-top: 3%;
+}
+
+/* line 39, sass/partials/_base.scss */
+#footer {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+  margin-left: -20px;
+  text-align: right;
+}
+
+/* line 53, sass/partials/_base.scss */
+#background-clouds {
+  background: transparent url("images/background-clouds.jpg") repeat;
+  background-size: cover;
+  content: "";
+  z-index: 1;
+  left: 0;
+  right: -2000px;
+  top: 0px;
+  position: fixed;
+  width: 4000px;
+  height: 700px;
+  transform: translatez(0);
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  animation: horizontalScroll 200s linear infinite;
+  -webkit-animation: horizontalScroll 200s linear infinite;
+  -moz-animation: horizontalScroll 200s linear infinite;
+  -ms-animation: horizontalScroll 200s linear infinite;
+  -o-animation: horizontalScroll 200s linear infinite;
+}
+
+/* line 59, sass/partials/_base.scss */
+#mountains {
+  background: transparent url("images/mountains.png") center bottom no-repeat;
+  background-size: cover;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+}
+
+/* line 63, sass/partials/_base.scss */
+#clouds {
+  background: transparent url("images/clouds.png") repeat;
+  background-size: cover;
+  content: "";
+  z-index: 3;
+  left: 0;
+  right: -2000px;
+  top: 0px;
+  position: fixed;
+  width: 4000px;
+  height: 100%;
+  transform: translatez(0);
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  animation: horizontalScroll 40s linear infinite;
+  -webkit-animation: horizontalScroll 40s linear infinite;
+  -moz-animation: horizontalScroll 40s linear infinite;
+  -ms-animation: horizontalScroll 40s linear infinite;
+  -o-animation: horizontalScroll 40s linear infinite;
+  opacity: 0.7;
+}
+
+/* line 70, sass/partials/_base.scss */
+#atat {
+  background: transparent url("images/atat.png") center bottom no-repeat;
+  background-size: cover;
+  z-index: 4;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+}
+
+/* line 74, sass/partials/_base.scss */
+#background-fog {
+  background: transparent url("images/fog.png") repeat;
+  background-size: cover;
+  content: "";
+  z-index: 5;
+  left: 0;
+  right: -2000px;
+  top: 0px;
+  position: fixed;
+  width: 4000px;
+  height: 100%;
+  transform: translatez(0);
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  animation: horizontalScroll 100s linear infinite;
+  -webkit-animation: horizontalScroll 100s linear infinite;
+  -moz-animation: horizontalScroll 100s linear infinite;
+  -ms-animation: horizontalScroll 100s linear infinite;
+  -o-animation: horizontalScroll 100s linear infinite;
+  opacity: 0.4;
+}
+
+/* line 81, sass/partials/_base.scss */
+#snow-back {
+  background: transparent url("images/snow1.png") repeat;
+  content: "";
+  z-index: 6;
+  left: 0px;
+  top: -1500px;
+  position: fixed;
+  width: 100%;
+  height: 3000px;
+  animation: snowFall 200s linear infinite;
+  -webkit-animation: snowFall 200s linear infinite;
+  -moz-animation: snowFall 200s linear infinite;
+  -ms-animation: snowFall 200s linear infinite;
+  -o-animation: snowFall 200s linear infinite;
+}
+
+/* line 86, sass/partials/_base.scss */
+#snow-front {
+  background: transparent url("images/snow1.png") repeat;
+  content: "";
+  z-index: 7;
+  left: 0px;
+  top: -1500px;
+  position: fixed;
+  width: 100%;
+  height: 3000px;
+  animation: snowFall 30s linear infinite;
+  -webkit-animation: snowFall 30s linear infinite;
+  -moz-animation: snowFall 30s linear infinite;
+  -ms-animation: snowFall 30s linear infinite;
+  -o-animation: snowFall 30s linear infinite;
+  opacity: 0.6;
+}
+
+/* line 92, sass/partials/_base.scss */
+#foreground-fog {
+  background: transparent url("images/fog2.png") repeat;
+  background-size: cover;
+  content: "";
+  z-index: 8;
+  left: 0;
+  right: -2000px;
+  top: 0px;
+  position: fixed;
+  width: 4000px;
+  height: 100%;
+  transform: translatez(0);
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  animation: horizontalScroll 20s linear infinite;
+  -webkit-animation: horizontalScroll 20s linear infinite;
+  -moz-animation: horizontalScroll 20s linear infinite;
+  -ms-animation: horizontalScroll 20s linear infinite;
+  -o-animation: horizontalScroll 20s linear infinite;
+}
+
+@-webkit-keyframes horizontalScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2000px, 0, 0);
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    -moz-transform: translate3d(-2000px, 0, 0);
+    -ms-transform: translate3d(-2000px, 0, 0);
+    -o-transform: translate3d(-2000px, 0, 0);
+  }
+}
+@-moz-keyframes horizontalScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2000px, 0, 0);
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    -moz-transform: translate3d(-2000px, 0, 0);
+    -ms-transform: translate3d(-2000px, 0, 0);
+    -o-transform: translate3d(-2000px, 0, 0);
+  }
+}
+@-o-keyframes horizontalScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2000px, 0, 0);
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    -moz-transform: translate3d(-2000px, 0, 0);
+    -ms-transform: translate3d(-2000px, 0, 0);
+    -o-transform: translate3d(-2000px, 0, 0);
+  }
+}
+@keyframes horizontalScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2000px, 0, 0);
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    -moz-transform: translate3d(-2000px, 0, 0);
+    -ms-transform: translate3d(-2000px, 0, 0);
+    -o-transform: translate3d(-2000px, 0, 0);
+  }
+}
+@-webkit-keyframes snowFall {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 1500px, 0);
+    -webkit-transform: translate3d(0, 1500px, 0);
+    -moz-transform: translate3d(0, 1500px, 0);
+    -ms-transform: translate3d(0, 1500px, 0);
+    -o-transform: translate3d(0, 1500px, 0);
+  }
+}
+@-moz-keyframes snowFall {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 1500px, 0);
+    -webkit-transform: translate3d(0, 1500px, 0);
+    -moz-transform: translate3d(0, 1500px, 0);
+    -ms-transform: translate3d(0, 1500px, 0);
+    -o-transform: translate3d(0, 1500px, 0);
+  }
+}
+@-o-keyframes snowFall {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 1500px, 0);
+    -webkit-transform: translate3d(0, 1500px, 0);
+    -moz-transform: translate3d(0, 1500px, 0);
+    -ms-transform: translate3d(0, 1500px, 0);
+    -o-transform: translate3d(0, 1500px, 0);
+  }
+}
+@keyframes snowFall {
+  0% {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 1500px, 0);
+    -webkit-transform: translate3d(0, 1500px, 0);
+    -moz-transform: translate3d(0, 1500px, 0);
+    -ms-transform: translate3d(0, 1500px, 0);
+    -o-transform: translate3d(0, 1500px, 0);
+  }
+}

@@ -1,0 +1,118 @@
+/* Base styling */
+
+// =============================================================================
+// Basic Styles
+// =============================================================================
+body {
+	@include removePaddingMargin;
+	background-color: $bg-color;
+	font-size: $font-size;
+	font-family: $font-name;
+	font-weight: $font-weight;
+	border: 0;
+	vertical-align: baseline;
+	color: $p-color;
+	letter-spacing: 2px;
+
+	a {
+		color: $a-color;
+
+		&:hover {
+			color: $a-color;
+			text-decoration: underline;
+		}
+	}
+}
+
+// =============================================================================
+// Static Content Styles
+// =============================================================================
+#esb-logo {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+    margin-top: 3%;
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    margin-left: -20px;
+    text-align: right;
+}
+
+
+
+// =============================================================================
+// Graphic Layer Styles
+// =============================================================================
+#background-clouds {
+    @include createHorizontalLayer("images/background-clouds.jpg", 1, 4000px, 700px);
+    @include transitionZ(0);
+    @include animate ( horizontalScroll, 200s, linear, infinite );
+}
+
+#mountains {
+	@include createFixedLayer ("images/mountains.png", 2);
+}
+
+#clouds {
+	@include createHorizontalLayer("images/clouds.png", 3, 4000px, 100%);
+    @include transitionZ(0);
+    @include animate ( horizontalScroll, 40s, linear, infinite );
+    opacity: 0.7;
+}
+
+#atat {
+	@include createFixedLayer ("images/atat.png", 4);
+}
+
+#background-fog {
+	@include createHorizontalLayer("images/fog.png", 5, 4000px, 100%);
+    @include transitionZ(0);
+    @include animate ( horizontalScroll, 100s, linear, infinite );
+    opacity: 0.4;
+}
+
+#snow-back {
+	@include createVerticalLayer("images/snow1.png", 6, 100%, 3000px);
+	@include animate ( snowFall, 200s, linear, infinite );
+}
+
+#snow-front {
+	@include createVerticalLayer("images/snow1.png", 7, 100%, 3000px);
+	@include animate ( snowFall, 30s, linear, infinite );
+    opacity: 0.6;
+}
+
+#foreground-fog {
+	@include createHorizontalLayer("images/fog2.png", 8, 4000px, 100%);
+    @include transitionZ(0);
+    @include animate ( horizontalScroll, 20s, linear, infinite );
+}
+
+
+// =============================================================================
+// Keyframe Implementation
+// =============================================================================
+@include keyframes (horizontalScroll) {
+	0% {
+		@include animationPrefixer (translate3d, 0, 0, 0);
+    }
+    100% {
+    	@include animationPrefixer (translate3d, -2000px, 0, 0);
+    }
+}
+
+@include keyframes (snowFall) {
+	0% {
+		@include animationPrefixer (translate3d, 0, 0, 0);
+    }
+    100% {
+    	@include animationPrefixer (translate3d, 0, 1500px, 0);
+    }
+}

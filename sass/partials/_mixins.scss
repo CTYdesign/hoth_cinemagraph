@@ -1,0 +1,89 @@
+/* Mixins */
+
+@mixin removePaddingMargin {
+	padding: 0;
+	margin: 0;
+}
+
+
+// =============================================================================
+// Layer Mixins
+// =============================================================================
+@mixin createFixedLayer($image, $zindex ) {
+	background: transparent url( $image ) center bottom no-repeat;
+    background-size: cover;
+    z-index: $zindex;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+
+}
+
+@mixin createHorizontalLayer($image, $zindex, $width, $height) {
+	background: transparent url( $image ) repeat;
+    background-size: cover;
+    content: "";
+    z-index: $zindex;
+    left: 0;
+    right: -2000px;
+    top: 0px;
+    position: fixed;
+    width: $width;
+    height: $height;
+}
+
+@mixin createVerticalLayer($image, $zindex, $width, $height) {
+	background: transparent url( $image ) repeat;
+    content: "";
+    z-index: $zindex;
+    left: 0px;
+    top: -1500px;
+    position: fixed;
+    width: $width;
+    height: $height;
+}
+
+
+
+// =============================================================================
+// Animation Mixins
+// =============================================================================
+@mixin transitionZ ( $zvalue ) {
+	transform: translatez($zvalue);
+	-webkit-transform:  translatez($zvalue);
+	-moz-transform:  translatez($zvalue);
+	-ms-transform:  translatez($zvalue);
+	-o-transform: translatez($zvalue);
+}
+
+@mixin animationPrefixer ( $animation, $xvalue, $yvalue, $zvalue ) {
+	transform: $animation + "(" + ( $xvalue, $yvalue, $zvalue ) + ")";
+	-webkit-transform:  $animation + "(" + ( $xvalue, $yvalue, $zvalue ) + ")";
+	-moz-transform:  $animation + "(" + ( $xvalue, $yvalue, $zvalue ) + ")";
+	-ms-transform: $animation + "(" + ( $xvalue, $yvalue, $zvalue ) + ")";
+	-o-transform: $animation + "(" + ( $xvalue, $yvalue, $zvalue ) + ")";
+}
+
+@mixin keyframes( $animationName ) {
+	@-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animate ($kf-type, $time, $curve, $iterations) {
+	animation: $kf-type $time $curve $iterations;
+	-webkit-animation:  $kf-type $time $curve $iterations;
+	-moz-animation:  $kf-type $time $curve $iterations;
+	-ms-animation: $kf-type $time $curve $iterations;
+	-o-animation:  $kf-type $time $curve $iterations;
+}
